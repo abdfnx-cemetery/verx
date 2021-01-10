@@ -1,6 +1,6 @@
 # Verx
 
-verx is a version checker built by python
+verx is a version checker
 
 ## Install
 
