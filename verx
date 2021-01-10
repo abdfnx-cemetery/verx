@@ -1,0 +1,32 @@
+#!/bin/bash
+
+function usage() {
+    local us=(
+        "Flages:"
+        "   verx -h: help"
+        "   verx -d: about verx"
+        "   verx -v: verx version"
+        "Usage:"
+        "   verx OWNER/REPO_NAME"
+    )
+}
+
+
+# while (($#)); do
+#     case "$1" in
+
+#     --help | -h)
+#         usage
+#         exit 0
+#         ;;
+
+#     --version | -v)
+#         version
+#         exit 0
+#         ;;
+#     esac
+# done
+
+curl --silent "https://api.github.com/repos/$1/releases/latest" | # Get latest release from GitHub api
+    grep '"tag_name":' |                                          # Get tag line
+    sed -E 's/.*"([^"]+)".*/\1/'                                  # Pluck JSON value
