@@ -10,4 +10,6 @@ verx is a version checker
 
 ## Usage
 
-verx OWNER/REPO_NAME
+```sh
+❯ verx OWNER/REPO_NAME
+```
