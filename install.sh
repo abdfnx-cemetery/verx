@@ -28,7 +28,7 @@ if [ -x "$(command -v curl)" ]; then
         successInstall
 
     else
-        echo "😕, Unidentified system..."
-        echo "support abdfnx to add corgit to this system"
+        echo "Unidentified system..."
+        echo "support us to 👨‍💻 verx for this system"
     fi
 fi

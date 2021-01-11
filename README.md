@@ -5,7 +5,7 @@ verx is a version checker
 ## Install
 
 ```sh
-❯ brew install verx
+❯ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/abdfnx/verx/HEAD/install.sh)"
 ```
 
 ## Usage
