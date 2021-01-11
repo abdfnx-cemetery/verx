@@ -8,6 +8,14 @@ successInstall() {
     echo "verx was installed successfully 👍"
 }
 
+check_verx_is_installed() {
+    if [ -x "$(command -v verx)"]; then
+            successInstall
+    else
+        echo "failed to install ☹"
+    fi
+}
+
 if [ -x "$(command -v curl)" ]; then
     if [[ "$UNAME" == Linux || "$UNAME" == "Darwin" ]]; then
         if [ -x "$(command -v sudo)" ]; then
@@ -19,13 +27,13 @@ if [ -x "$(command -v curl)" ]; then
 
             chmod 755 $verxLocLD/verx
         fi
-
-        successInstall
+        
+        check_verx_is_installed
 
     elif [[ "$UNAME" == CYGWIN* || "$UNAME" == MINGW* ]]; then
         wget -P /usr/bin $verxUrl
 
-        successInstall
+        check_verx_is_installed
 
     else
         echo "Unidentified system..."
