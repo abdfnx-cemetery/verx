@@ -26,6 +26,14 @@ function usage() {
 #     esac
 # done
 
-curl --silent "https://api.github.com/repos/$1/releases/latest" | # Get latest release from GitHub api
-    grep '"tag_name":' |                                          # Get tag line
-    sed -E 's/.*"([^"]+)".*/\1/'                                  # Pluck JSON value
+latest() {
+    curl --silent "https://api.github.com/repos/$1/releases/latest" | # Get latest release from GitHub api
+        grep '"tag_name":' |                                          # Get tag line
+        sed -E 's/.*"([^"]+)".*/\1/'                                  # Pluck JSON value
+}
+
+current() {
+    if [ -x "$(command -v git)" ]; then
+        git 
+    fi
+}
