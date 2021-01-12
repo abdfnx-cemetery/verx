@@ -29,6 +29,10 @@ current() {
     fi
 }
 
+sm() {
+    ruby <(wget -qO- https://raw.githubusercontent.com/abdfnx/secman/HEAD/tools/v_checker)
+}
+
 while (($#)); do
     case "$1" in
 
@@ -49,6 +53,11 @@ while (($#)); do
 
     -c)
         current
+        exit 0
+        ;;
+
+    --sm)
+        sm
         exit 0
         ;;
 
