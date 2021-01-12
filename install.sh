@@ -10,7 +10,7 @@ successInstall() {
 
 check_verx_is_installed() {
     if [ -x "$(command -v verx)"]; then
-            successInstall
+        successInstall
     else
         echo "failed to install ☹"
     fi
@@ -27,7 +27,7 @@ if [ -x "$(command -v curl)" ]; then
 
             chmod 755 $verxLocLD/verx
         fi
-        
+
         check_verx_is_installed
 
     elif [[ "$UNAME" == CYGWIN* || "$UNAME" == MINGW* ]]; then
