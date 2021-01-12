@@ -7,33 +7,59 @@ function usage() {
         "   verx -d: about verx"
         "   verx -v: verx version"
         "Usage:"
-        "   verx OWNER/REPO_NAME"
+        "   Latest version:"
+        "       verx OWNER/REPO_NAME -l"
+        "   Current version:"
+        "    inside repo folder"
+        "       verx -c"
     )
 }
 
-# while (($#)); do
-#     case "$1" in
-
-#     --help | -h)
-#         usage
-#         exit 0
-#         ;;
-
-#     --version | -v)
-#         version
-#         exit 0
-#         ;;
-#     esac
-# done
-
 latest() {
-    curl --silent "https://api.github.com/repos/$1/releases/latest" | # Get latest release from GitHub api
-        grep '"tag_name":' |                                          # Get tag line
-        sed -E 's/.*"([^"]+)".*/\1/'                                  # Pluck JSON value
+    if [ -x '$(command -v curl)' ]; then
+        curl --silent "https://api.github.com/repos/$1/releases/latest" | # Get latest release from GitHub api
+            grep '"tag_name":' |                                          # Get tag_name line
+            sed -E 's/.*"([^"]+)".*/\1/'                                  # Pluck JSON value
+    fi
 }
 
 current() {
     if [ -x "$(command -v git)" ]; then
-        git 
+        git describe --abbrev=0 --tags
     fi
 }
+
+while (($#)); do
+    case "$1" in
+
+    --help | -h)
+        usage
+        exit 0
+        ;;
+
+    --version | -v)
+        verx abdfnx/verx -c
+        exit 0
+        ;;
+
+    -d)
+        verx abdfnx/verx -c
+        exit 0
+        ;;
+
+    -c)
+        current
+        exit 0
+        ;;
+
+    esac
+
+    case "$2" in
+
+    -l)
+        latest $1
+        exit 0
+        ;;
+
+    esac
+done
