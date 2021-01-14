@@ -47,7 +47,7 @@ while (($#)); do
         ;;
 
     -d)
-        verx abdfnx/verx -c
+        echo "verx is a version checker"
         exit 0
         ;;
 
