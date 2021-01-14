@@ -11,5 +11,5 @@ verx is a version checker
 ## Usage
 
 ```sh
-❯ verx OWNER/REPO_NAME
+❯ verx OWNER/REPO_NAME -l
 ```
