@@ -30,7 +30,7 @@ current() {
 }
 
 sm() {
-    ruby <(wget -qO- https://raw.githubusercontent.com/abdfnx/secman/HEAD/tools/v.rb)
+    ruby -W0 <(wget -qO- https://raw.githubusercontent.com/abdfnx/secman/HEAD/tools/v_checker.rb)
 }
 
 while (($#)); do
