@@ -33,6 +33,10 @@ sm() {
     ruby -W0 <(wget -qO- https://raw.githubusercontent.com/abdfnx/secman/HEAD/tools/v_checker.rb) -c
 }
 
+sm_upd() {
+    ruby -W0 <(wget -qO- https://raw.githubusercontent.com/abdfnx/secman/HEAD/update/upd.rb)
+}
+
 while (($#)); do
     case "$1" in
 
@@ -42,7 +46,7 @@ while (($#)); do
         ;;
 
     --version | -v)
-        verx abdfnx/verx -c
+        verx abdfnx/verx -l
         exit 0
         ;;
 
@@ -58,6 +62,11 @@ while (($#)); do
 
     --sm)
         sm
+        exit 0
+        ;;
+    
+    --upd)
+        sm_upd
         exit 0
         ;;
 
