@@ -11,8 +11,6 @@ successInstall() {
 check_verx_is_installed() {
     if [ -x "$(command -v verx)"]; then
         successInstall
-    else
-        echo "failed to install ☹"
     fi
 }
 
