@@ -33,8 +33,8 @@ sm() {
     ruby -W0 <(wget -qO- https://raw.githubusercontent.com/secman-team/tools/HEAD/v_checker.rb) -c
 }
 
-sm_upd() {
-    ruby -W0 <(wget -qO- https://raw.githubusercontent.com/secman-team/secman/HEAD/update/upd.rb)
+sm_upg() {
+    ruby -W0 <(wget -qO- https://raw.githubusercontent.com/secman-team/secman/HEAD/upgrade/upg.rb)
 }
 
 while (($#)); do
@@ -65,8 +65,8 @@ while (($#)); do
         exit 0
         ;;
     
-    --upd)
-        sm_upd
+    --upg)
+        sm_upg
         exit 0
         ;;
 
