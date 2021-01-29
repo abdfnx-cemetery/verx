@@ -13,6 +13,8 @@ function usage() {
         "    inside repo folder"
         "       verx -c"
     )
+
+    printf "%s\n" "${us[@]}"
 }
 
 latest() {
