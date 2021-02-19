@@ -32,11 +32,11 @@ current() {
 }
 
 sm() {
-    ruby -W0 <(wget -qO- https://raw.githubusercontent.com/secman-team/tools/HEAD/v_checker.rb) -c
+    ruby -W0 ~/sm/v_checker.rb -c
 }
 
 sm_upg() {
-    ruby -W0 <(wget -qO- https://raw.githubusercontent.com/secman-team/secman/HEAD/upgrade/upg.rb)
+    ruby -W0 ~/sm/upg.rb
 }
 
 while (($#)); do
