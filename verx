@@ -32,11 +32,11 @@ current() {
 }
 
 sm() {
-    ruby -W0 /home/sm/v_checker.rb -c
+    ruby /home/sm/v_checker.rb -c
 }
 
 sm_upg() {
-    ruby -W0 /home/sm/upg.rb
+    ruby /home/sm/upg.rb
 }
 
 while (($#)); do
