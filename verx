@@ -31,14 +31,6 @@ current() {
     fi
 }
 
-sm() {
-    ruby /home/sm/v_checker.rb -c
-}
-
-sm_upg() {
-    ruby /home/sm/upg.rb
-}
-
 while (($#)); do
     case "$1" in
 
@@ -59,16 +51,6 @@ while (($#)); do
 
     -c)
         current
-        exit 0
-        ;;
-
-    --sm)
-        sm
-        exit 0
-        ;;
-    
-    --upg)
-        sm_upg
         exit 0
         ;;
 
