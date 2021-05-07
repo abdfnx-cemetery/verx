@@ -5,11 +5,11 @@ verx is a version checker
 ## Install
 
 ```sh
-❯ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/abdfnx/verx/HEAD/install.sh)"
+curl -fsSL https://raw.githubusercontent.com/abdfnx/verx/HEAD/install.sh | bash
 ```
 
 ## Usage
 
 ```sh
-❯ verx OWNER/REPO_NAME -l
+verx OWNER/REPO_NAME -l
 ```
