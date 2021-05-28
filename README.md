@@ -1,6 +1,6 @@
 # Verx
 
-verx is a version checker
+> verx is a **version checker**
 
 ## Install
 
