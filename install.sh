@@ -1,7 +1,7 @@
 #!/bin/bash
 
 UNAME=$(uname)
-verxUrl=https://raw.githubusercontent.com/secman-team/verx/HEAD/verx
+verxUrl=https://raw.githubusercontent.com/abdfnx/verx/HEAD/verx
 
 successInstall() {
     echo "verx was installed successfully 👍"
