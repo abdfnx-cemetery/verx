@@ -5,7 +5,7 @@
 ## Install
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/abdfnx/verx/HEAD/install.sh | bash
+curl -fsSL https://abdfnx.github.io/verx/install.sh | bash
 ```
 
 ## Usage
