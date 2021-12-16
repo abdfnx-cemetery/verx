@@ -33,5 +33,7 @@ if [ -x "$(command -v curl)" ]; then
 
             chmod 755 $verxLocLD/verx
         fi
+        
+        check_verx_is_installed
     fi
 fi
